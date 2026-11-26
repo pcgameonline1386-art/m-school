@@ -172,3 +172,79 @@ body.dark-theme .header-brand-divider{background:#b19470}
     color: #f3efdc;
   }
 }
+
+
+/* --- Refined editorial image frames: full artwork always remains visible --- */
+.hero-image,
+.chapter-image {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  padding: 10px;
+  background: #F8FAE5;
+  border: 1px solid rgba(118, 69, 59, .20);
+  box-shadow:
+    0 18px 38px rgba(48, 39, 34, .12),
+    0 4px 12px rgba(48, 39, 34, .07),
+    inset 0 0 0 1px rgba(255, 255, 255, .7);
+  overflow: visible;
+  transition: box-shadow .25s ease, transform .25s ease;
+}
+.hero-image {
+  aspect-ratio: auto;
+  border-radius: 34px 34px 34px 34px;
+  padding: 11px;
+  box-shadow:
+    0 22px 44px rgba(48, 39, 34, .15),
+    0 0 0 7px rgba(177, 148, 112, .13),
+    inset 0 0 0 1px rgba(255, 255, 255, .75);
+}
+.chapter-image {
+  max-width: 100%;
+  justify-self: stretch;
+  border-radius: 30px;
+}
+.chapter-image.p1 {
+  border-radius: 34px 34px 34px 12px;
+  box-shadow: 0 18px 36px rgba(48,39,34,.12), 8px 8px 0 rgba(177,148,112,.22);
+}
+.chapter-image.p2 {
+  border-radius: 48px 24px 48px 24px;
+  box-shadow: 0 18px 36px rgba(48,39,34,.12), -7px 8px 0 rgba(67,118,108,.20);
+}
+.chapter-image.p3 {
+  border-radius: 24px 48px 24px 48px;
+  box-shadow: 0 18px 36px rgba(48,39,34,.12), 7px 8px 0 rgba(118,69,59,.16);
+}
+.chapter-image.p4 {
+  border-radius: 42px 42px 18px 42px;
+  box-shadow: 0 18px 36px rgba(48,39,34,.12), -7px 8px 0 rgba(67,118,108,.20);
+}
+.chapter-image.p5 {
+  border-radius: 30px 54px 30px 54px;
+  box-shadow: 0 18px 36px rgba(48,39,34,.12), 8px 8px 0 rgba(177,148,112,.22);
+}
+.chapter-image.p6 {
+  border-radius: 46px 24px 46px 24px;
+  box-shadow: 0 18px 36px rgba(48,39,34,.12), -7px 8px 0 rgba(67,118,108,.18);
+}
+.chapter-image.p7 {
+  border-radius: 24px 42px 42px 42px;
+  box-shadow: 0 18px 36px rgba(48,39,34,.12), 7px 8px 0 rgba(118,69,59,.16);
+}
+.hero-image:hover,
+.chapter-image:hover {
+  box-shadow: 0 22px 42px rgba(48,39,34,.17), 0 0 0 5px rgba(177,148,112,.15);
+}
+@media (max-width: 800px) {
+  .hero-image { padding: 8px; border-radius: 28px; }
+  .chapter-image { padding: 8px; }
+}
+@media (max-width: 480px) {
+  .hero-image { padding: 7px; border-radius: 24px; }
+  .chapter-image { padding: 7px; }
+}
