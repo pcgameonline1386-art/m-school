@@ -248,3 +248,71 @@ body.dark-theme .header-brand-divider{background:#b19470}
   .hero-image { padding: 7px; border-radius: 24px; }
   .chapter-image { padding: 7px; }
 }
+
+
+/* === Correct image/frame separation: frame is the wrapper, artwork is its child === */
+.hero-visual { min-width: 0; }
+.hero-frame,
+.chapter-frame {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
+  padding: 11px;
+  background: #F8FAE5;
+  border: 1px solid rgba(118, 69, 59, .20);
+  box-shadow: 0 18px 38px rgba(48,39,34,.12), 0 4px 12px rgba(48,39,34,.07), inset 0 0 0 1px rgba(255,255,255,.7);
+  overflow: hidden;
+}
+.hero-frame {
+  border-radius: 34px;
+  box-shadow: 0 22px 44px rgba(48,39,34,.15), 0 0 0 7px rgba(177,148,112,.13), inset 0 0 0 1px rgba(255,255,255,.75);
+}
+.chapter-frame { max-width: 100%; justify-self: stretch; border-radius: 30px; }
+.chapter-frame:has(.p1) { border-radius: 34px 34px 34px 12px; box-shadow: 0 18px 36px rgba(48,39,34,.12), 8px 8px 0 rgba(177,148,112,.22); }
+.chapter-frame:has(.p2) { border-radius: 48px 24px 48px 24px; box-shadow: 0 18px 36px rgba(48,39,34,.12), -7px 8px 0 rgba(67,118,108,.20); }
+.chapter-frame:has(.p3) { border-radius: 24px 48px 24px 48px; box-shadow: 0 18px 36px rgba(48,39,34,.12), 7px 8px 0 rgba(118,69,59,.16); }
+.chapter-frame:has(.p4) { border-radius: 42px 42px 18px 42px; box-shadow: 0 18px 36px rgba(48,39,34,.12), -7px 8px 0 rgba(67,118,108,.20); }
+.chapter-frame:has(.p5) { border-radius: 30px 54px 30px 54px; box-shadow: 0 18px 36px rgba(48,39,34,.12), 8px 8px 0 rgba(177,148,112,.22); }
+.chapter-frame:has(.p6) { border-radius: 46px 24px 46px 24px; box-shadow: 0 18px 36px rgba(48,39,34,.12), -7px 8px 0 rgba(67,118,108,.18); }
+.chapter-frame:has(.p7) { border-radius: 24px 42px 42px 42px; box-shadow: 0 18px 36px rgba(48,39,34,.12), 7px 8px 0 rgba(118,69,59,.16); }
+.hero-frame > .hero-image,
+.chapter-frame > .chapter-image {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  object-fit: contain;
+  object-position: center;
+  overflow: hidden;
+  transform: none;
+  transition: none;
+}
+.hero-frame > .hero-image { border-radius: 22px; }
+.chapter-frame > .chapter-image { justify-self: auto; border-radius: 20px; }
+.chapter.reverse .chapter-frame { order: 2; }
+
+.hero-frame:hover,
+.chapter-frame:hover { box-shadow: 0 22px 42px rgba(48,39,34,.17), 0 0 0 5px rgba(177,148,112,.15); }
+@media (max-width: 800px) {
+  .hero-frame, .chapter-frame { padding: 8px; }
+  .chapter.reverse .chapter-frame { order: 0; }
+}
+@media (max-width: 480px) {
+  .hero-frame { padding: 7px; border-radius: 24px; }
+  .chapter-frame { padding: 7px; }
+}
+/* Keep each illustration clipped to the same custom silhouette as its frame. */
+.hero-frame > .hero-image,
+.chapter .chapter-frame > .chapter-image {
+  border-radius: inherit;
+}
